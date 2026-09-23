@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const NAV = [
   { label: 'Home', to: '/' },
@@ -34,17 +34,21 @@ const NAV = [
 
 function DesktopItem({ item }) {
   const [hover, setHover] = useState(false);
+  const { pathname } = useLocation();
+  const active = item.to === pathname || item.children?.some((c) => c.to === pathname);
   return (
     <div className="relative" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
       <Link
         to={item.to || '#'}
-        className="text-[13px] uppercase tracking-wide text-[#f9f9f9] hover:text-brand transition-colors flex items-center gap-1"
+        className={`px-5 leading-[53px] text-[13px] font-semibold uppercase hover:text-[#f9f9f9] transition-colors flex items-center gap-1 ${
+          active ? 'text-[#f9f9f9]' : 'text-[#6d6d6d]'
+        }`}
       >
         {item.label}
         {item.children && <span className="text-[10px]">▾</span>}
       </Link>
       {item.children && hover && (
-        <div className="absolute left-0 top-full pt-3 min-w-[200px] z-50">
+        <div className="absolute left-0 top-full min-w-[200px] z-50">
           <div className="bg-[#292929] shadow-lg py-2">
             {item.children.map((c) => (
               <Link
@@ -68,13 +72,13 @@ export default function Header() {
   return (
     <>
       <header className="bg-[#292929] relative z-40">
-        <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 py-4">
+        <div className="h-[80px] flex items-center justify-between pl-6 lg:pl-[63px] pr-6 lg:pr-5">
           <Link to="/">
-            <img src="/images/logo-light.png" alt="That'so" className="h-9 w-auto" />
+            <img src="/images/logo-light.png" alt="That'so" className="w-[147px] h-auto" />
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center">
             {NAV.map((item) => (
               <DesktopItem key={item.label} item={item} />
             ))}
