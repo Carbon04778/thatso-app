@@ -1,0 +1,46 @@
+{
+  "name": "Product",
+  "type": "object",
+  "title": "Product",
+  "description": "That'so product catalog entry (self-tan, sun-care, self-care, professional lines)",
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "slug": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "categories": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "description": {
+      "type": "string"
+    },
+    "usage": {
+      "type": "string"
+    },
+    "info": {
+      "type": "string"
+    },
+    "featured_image": {
+      "type": "string",
+      "format": "uri"
+    },
+    "images": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" }
+    }
+  },
+  "required": ["title", "slug"],
+  "rls": {
+    "create": false,
+    "read": true,
+    "update": false,
+    "delete": false
+  }
+}
