@@ -16,3 +16,8 @@ export function getProductsByCategory(categoryName) {
 export function getPageBySlug(slug) {
   return pages.find((p) => p.slug === slug);
 }
+
+// Products in the exact order given (the live site's order), skipping unknown slugs.
+export function getProductsBySlugs(slugs) {
+  return slugs.map((s) => getProductBySlug(s)).filter(Boolean);
+}

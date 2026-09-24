@@ -1,0 +1,23 @@
+/*
+ * Undo Tailwind's preflight inside imported WordPress content.
+ * Each selector has element-level specificity (0,0,1) via :where(.wp-content) + tag: it beats preflight
+ * (earlier, same specificity) but loses to the theme/Elementor styles imported after it, like on WordPress.
+ */
+:where(.wp-content) h1, :where(.wp-content) h2, :where(.wp-content) h3,
+:where(.wp-content) h4, :where(.wp-content) h5, :where(.wp-content) h6 { font-size: revert; font-weight: revert; margin: revert; }
+:where(.wp-content) p, :where(.wp-content) blockquote, :where(.wp-content) figure,
+:where(.wp-content) dl, :where(.wp-content) dd, :where(.wp-content) pre { margin: revert; }
+:where(.wp-content) ul, :where(.wp-content) ol { list-style: revert; margin: revert; padding: revert; }
+:where(.wp-content) img, :where(.wp-content) svg, :where(.wp-content) video, :where(.wp-content) canvas,
+:where(.wp-content) audio, :where(.wp-content) iframe, :where(.wp-content) embed, :where(.wp-content) object { display: revert; vertical-align: revert; }
+:where(.wp-content) img, :where(.wp-content) video { max-width: revert; height: revert; }
+:where(.wp-content) a { color: revert; text-decoration: revert; }
+:where(.wp-content) hr { border-top-width: revert; color: revert; height: revert; }
+:where(.wp-content) table { border-collapse: revert; border-color: revert; text-indent: revert; }
+:where(.wp-content) button, :where(.wp-content) input, :where(.wp-content) select, :where(.wp-content) textarea {
+  font: revert; color: revert; margin: revert; padding: revert; line-height: revert; background-color: revert;
+}
+:where(.wp-content) button, :where(.wp-content) [type='button'], :where(.wp-content) [type='submit'] {
+  background-image: revert; -webkit-appearance: revert; appearance: revert;
+}
+:where(.wp-content) *, :where(.wp-content) ::before, :where(.wp-content) ::after { border-width: revert; border-style: revert; border-color: revert; }

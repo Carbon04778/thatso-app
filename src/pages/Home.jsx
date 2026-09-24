@@ -58,7 +58,7 @@ export default function Home() {
   const [slide, setSlide] = useState(0);
 
   useEffect(() => {
-    const t = setTimeout(() => setSlide((s) => (s + 1) % slides.length), 5000);
+    const t = setTimeout(() => setSlide((s) => (s + 1) % slides.length), 10000);
     return () => clearTimeout(t);
   }, [slide]);
 
@@ -141,7 +141,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="pt-[10px] md:pr-5">
+          <div className="pt-[10px]">
             <h3 className="text-[24px] leading-[32px] font-light">
               Die Nummer 1 für Sie und Ihn bei Bräunungssprays, Cremes und Mousse.
             </h3>
@@ -183,7 +183,7 @@ export default function Home() {
         <h2 className="text-[36px] leading-[44px] md:text-[56px] md:leading-[64px] font-light">
           Bräunungssprays und Bräunungsduschen
         </h2>
-        <p className="mt-4 text-[18px] leading-[28px] font-light">
+        <p className="mt-4 text-[24px] leading-[32px] font-light">
           Die Nummer 1 bei Bräunungssprays und Pflegeprodukten
         </p>
       </section>
@@ -209,7 +209,7 @@ export default function Home() {
             href="https://www.terraart.de/"
             target="_blank"
             rel="noreferrer"
-            className="mt-[35px] inline-block border border-brand px-[30px] py-[15px] text-[16px] leading-[24px] text-[#6d6d6d] hover:bg-brand hover:text-white transition-colors"
+            className="mt-[35px] inline-block border border-brand px-[30px] py-[15px] text-[16px] leading-[24px] text-[#6d6d6d] hover:bg-brand hover:text-[#f9f9f9] transition-colors duration-300"
           >
             Zu Terra Art.de
           </a>

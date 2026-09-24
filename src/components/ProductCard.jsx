@@ -1,18 +1,27 @@
 import { Link } from 'react-router-dom';
 
-export default function ProductCard({ product }) {
+// Elementor "custom skin" product loop item: rounded image that grows on hover (0.3s),
+// bold 12px title below.
+export default function ProductCard({ product, image = { src: product.featured_image } }) {
+  const to = `/produkt/${product.slug}`;
   return (
-    <Link to={`/produkt/${product.slug}`} className="block group">
-      <div className="aspect-square bg-[#efe6da] flex items-center justify-center overflow-hidden">
-        {product.featured_image && (
+    <div className="p-[10px]">
+      <Link to={to} className="block">
+        {image.src && (
           <img
-            src={product.featured_image}
+            src={image.src}
+            srcSet={image.srcSet}
+            sizes={image.sizes}
+            width={image.width}
+            height={image.height}
             alt={product.title}
-            className="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-auto rounded-[3px] transition-transform duration-300 hover:scale-110"
           />
         )}
-      </div>
-      <p className="text-center mt-4 font-semibold text-[15px]">{product.title}</p>
-    </Link>
+      </Link>
+      <h3 className="mt-5 text-center text-[12px] leading-[24px] font-bold text-[#292929]">
+        <Link to={to}>{product.title}</Link>
+      </h3>
+    </div>
   );
 }
