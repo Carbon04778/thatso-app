@@ -10,6 +10,10 @@ export function openLightbox(slides, index = 0) {
   listeners.forEach((fn) => fn({ slides, index }));
 }
 
+// The lightbox is appended to <body> on WordPress, so it uses the Hello theme's body font.
+const BODY_FONT =
+  '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji';
+
 const GAP = 100;
 const SPEED = 300;
 
@@ -137,7 +141,7 @@ export default function Lightbox() {
     <div
       ref={rootRef}
       className="dialog-widget dialog-lightbox-widget dialog-type-buttons dialog-type-lightbox elementor-lightbox"
-      style={{ display: 'block' }}
+      style={{ display: 'block', fontFamily: BODY_FONT, lineHeight: 1.5, color: '#333' }}
       role="dialog"
       aria-modal="true"
     >

@@ -6,7 +6,7 @@ import { GRID_PAGES } from '../data/gridPages';
 
 export default function CategoryPage() {
   const { pathname } = useLocation();
-  const page = GRID_PAGES[pathname.replace(/^\//, '')];
+  const page = GRID_PAGES[pathname.replace(/^\//, '').toLowerCase()];
   if (!page) return null;
 
   return (

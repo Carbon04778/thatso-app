@@ -19,10 +19,17 @@ const BASE = [
   ['/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css', 'font-awesome/css/all.css'],
   ['/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css', 'font-awesome/css/v4-shims.css'],
   ['/wp-content/plugins/elementor/assets/lib/animations/animations.min.css', 'animations.css'],
+  ['/wp-content/plugins/elementor/assets/lib/e-gallery/css/e-gallery.min.css', 'e-gallery.css'],
   ['/wp-content/plugins/ele-custom-skin/assets/css/ecs-style.css', 'ecs-style.css'],
+  ['/wp-content/plugins/contact-form-7/includes/css/styles.css', 'cf7-styles.css'],
+  ['/wp-content/plugins/cf7-skins-innozilla/css/front_style.css', 'cf7-skins-front.css'],
+  ['/wp-content/plugins/cf7-conditional-fields/style.css', 'cf7-conditional-fields.css'],
   ['/wp-content/uploads/elementor/css/global.css', 'global.css'],
   ['/wp-content/uploads/elementor/css/post-9.css', 'post-9.css'],
 ];
+
+// Inline <style> blocks printed into a page's <head> by plugins: [page path, text the block contains, local file].
+const INLINE = [['/kontakt', 'icf7s-686', 'cf7-skin-686.css']];
 
 async function get(url, binary = false) {
   const res = await fetch(url.startsWith('http') ? url : SITE + url);
@@ -80,5 +87,17 @@ async function fetchUrls(css, remoteCssUrl, localCssFile) {
     if (scoped) css = scope(css);
     fs.writeFileSync(local, `/* Source: ${SITE}${url} */\n${css}`);
     console.log('saved', file, css.length);
+  }
+  for (const [page, needle, file] of INLINE) {
+    const html = await get(page);
+    const block = [...html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)].map((m) => m[1]).find((c) => c.includes(needle));
+    if (!block) {
+      console.log('missing inline style', page, needle);
+      continue;
+    }
+    // The plugin prints a stray PHP "?>" at the end of its CSS; browsers ignore it, the build does not.
+    const css = block.trim().replace(/\?>\s*$/, '');
+    fs.writeFileSync(path.join(OUT, file), `/* Source: inline <style> on ${SITE}${page} */\n${css}\n`);
+    console.log('saved', file, block.length);
   }
 })();

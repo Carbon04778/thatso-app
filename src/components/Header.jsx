@@ -45,6 +45,12 @@ const NAV = [
   },
 ];
 
+// Current page path for menu highlighting. Search results live on /?s=… but are not the "Home" page.
+function useCurrentPath() {
+  const { pathname, search } = useLocation();
+  return pathname === '/' && new URLSearchParams(search).get('s') ? '/?s' : pathname;
+}
+
 // SmartMenus timings used by Elementor's nav menu.
 const SHOW_DELAY = 250;
 const HIDE_DELAY = 500;
@@ -156,7 +162,7 @@ function DesktopSubItem({ item, pathname }) {
 }
 
 function DesktopItem({ item }) {
-  const { pathname } = useLocation();
+  const pathname = useCurrentPath();
   const { state, enter, leave } = useHoverMenu();
   const active = item.to === pathname;
   const highlighted = active || state === 'open';
@@ -237,7 +243,7 @@ function MobileItem({ item, level, pathname, onNavigate }) {
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const { pathname } = useLocation();
+  const pathname = useCurrentPath();
 
   useEffect(() => setOpen(false), [pathname]);
 

@@ -1,19 +1,32 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Lightbox from './components/Lightbox';
-import Home from './pages/Home';
-import ProductDetail from './pages/ProductDetail';
 import CategoryPage from './pages/CategoryPage';
 import BeautyEspresso from './pages/BeautyEspresso';
 import ImportedPage from './pages/ImportedPage';
+import SearchPage from './pages/SearchPage';
+import RouteMeta from './components/RouteMeta';
+import NotFound from './pages/NotFound';
+
+// WordPress serves search results on the front page URL (/?s=term, /page/2?s=term).
+function HomeOrSearch() {
+  const { search } = useLocation();
+  return new URLSearchParams(search).get('s') ? <SearchPage /> : <ImportedPage />;
+}
+
+// WordPress redirects "/page/" to "/page" (301).
+function TrailingSlash() {
+  const { pathname, search } = useLocation();
+  return pathname.length > 1 && pathname.endsWith('/') ? <Navigate replace to={pathname.replace(/\/+$/, '') + search} /> : null;
+}
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, search]);
   return null;
 }
 
@@ -48,12 +61,15 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col">
+      <RouteMeta />
+      <TrailingSlash />
+      <div>
         <Header />
-        <main className="flex-1">
+        <main>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/produkt/:slug" element={<ProductDetail />} />
+            <Route path="/" element={<HomeOrSearch />} />
+            <Route path="/page/:page" element={<SearchPage />} />
+            <Route path="/produkt/:slug" element={<ImportedPage />} />
             <Route path="/beauty-espresso" element={<BeautyEspresso />} />
             {GRID.map((p) => (
               <Route key={p} path={p} element={<CategoryPage />} />
@@ -61,6 +77,7 @@ export default function App() {
             {IMPORTED.map((p) => (
               <Route key={p} path={p} element={<ImportedPage />} />
             ))}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

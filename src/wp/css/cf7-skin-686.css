@@ -1,0 +1,338 @@
+/* Source: inline <style> on https://thatso-germany.de/kontakt */
+.wpcf7.icf7s-686 :hover, 
+    .wpcf7.icf7s-686 :active, 
+    .wpcf7.icf7s-686 :focus{
+        outline: 0;
+        outline: none;
+        box-shadow: none;
+    }
+    .wpcf7.icf7s-686 {
+        max-width: 100%;
+        height: inherit;
+        display: inline-block;
+        padding: 20px;
+                    }
+    .wpcf7.icf7s-686 p {
+        padding: 0px;
+    }
+    .wpcf7.icf7s-686 label {
+        width: 100%;
+        display: inline-block;
+        font-size: 16px;
+        color: #6d6d6d;
+                line-height: 100%;
+        font-family: sans-serif;
+        cursor: inherit;
+        margin-bottom: 15px;
+    }
+    .wpcf7.icf7s-686 br {
+        display: none;
+    }
+    .wpcf7.icf7s-686 .wpcf7-range {
+        width: 100%;
+        min-height: 40px;
+    }
+
+    .wpcf7.icf7s-686 label.text-area-full {
+        width: 100%;
+    }
+    /* 1.1.3 Update */
+    .wpcf7.icf7s-686 label .wpcf7-list-item-label{
+        margin: 0;
+    }
+    .wpcf7.icf7s-686 .wpcf7-list-item.first {
+        margin: 0;
+    }
+    .wpcf7.icf7s-686 label .wpcf7-list-item {
+        margin-bottom: 0;
+    }
+    .wpcf7.icf7s-686 .wpcf7-list-item-label {
+        display: inline-block;
+        font-size: 16px;
+        color: #6d6d6d;
+                line-height: 100%;
+        font-family: sans-serif;
+        cursor: inherit;
+        margin-bottom: 15px;
+        font-style: initial;
+    }
+    .wpcf7.icf7s-686 .wpcf7-checkbox input[type=checkbox] {
+        transform: scale(1.2);
+        margin: 0 10px;
+        position: relative;
+        top: -2px;
+    }
+    .wpcf7.icf7s-686 .wpcf7-acceptance .wpcf7-list-item {
+        margin: 0;
+    }
+    .wpcf7.icf7s-686 label input[type=checkbox] {
+        transform: scale(1.2);
+        margin-top: 0px;
+        margin-right: 10px;
+    }
+    /* end of 1.1.3 Update */
+    .wpcf7.icf7s-686 label input,
+    .wpcf7.icf7s-686 label textarea,
+    .wpcf7.icf7s-686 label select {
+        margin-top: 10px;
+        font-family: sans-serif;
+        padding: 5px 10px;
+    }
+    .wpcf7.icf7s-686 label .wpcf7-text,
+    .wpcf7.icf7s-686 label .wpcf7-textarea,
+    .wpcf7.icf7s-686 label .wpcf7-number,
+    .wpcf7.icf7s-686 label .wpcf7-date,
+    .wpcf7.icf7s-686 label .wpcf7-select {     
+        min-height: 40px;
+        height: inherit;
+        background-color:#fff;
+        border-width: 1px;
+        border-color: #444;
+        border-style: solid;
+        border-radius: 2px;
+        color: #6d6d6d;
+        width: 100%;
+        font-size:16px;
+        font-weight: 400;
+        box-shadow: none;
+    }
+
+    .wpcf7.icf7s-686 label .wpcf7-text::placeholder,
+    .wpcf7.icf7s-686 label .wpcf7-text::-webkit-input-placeholder,
+    .wpcf7.icf7s-686 label .wpcf7-textarea::placeholder,
+    .wpcf7.icf7s-686 label .wpcf7-textarea::-webkit-input-placeholder,
+    .wpcf7.icf7s-686 label .wpcf7-number::placeholder,
+    .wpcf7.icf7s-686 label .wpcf7-number::-webkit-input-placeholder,
+    .wpcf7.icf7s-686 label .wpcf7-date::placeholder,
+    .wpcf7.icf7s-686 label .wpcf7-date::-webkit-input-placeholder,
+    .wpcf7.icf7s-686 label .wpcf7-select::placeholder,
+    .wpcf7.icf7s-686 label .wpcf7-select::-webkit-input-placeholder { 
+        font-size:16px;
+        color: #ababab;
+    }
+
+
+    .wpcf7.icf7s-686 label .wpcf7-file {
+        font-size: 16px;
+    }
+    .wpcf7.icf7s-686 label .wpcf7-checkbox,
+    .wpcf7.icf7s-686 label .wpcf7-radio {
+        width: 100%;
+        display: inline-block;
+        margin-top: 10px;
+    }
+    .wpcf7.icf7s-686 label .wpcf7-checkbox .wpcf7-list-item,
+    .wpcf7.icf7s-686 label .wpcf7-radio .wpcf7-list-item {
+        width: 40%;
+        float: left;
+        font-size: 16px;
+        position: relative;
+        margin-bottom: 10px;
+        left: 30px;
+        margin-right: 10%;
+        height: 35px;
+        display: table;
+    }
+    .wpcf7.icf7s-686 label .wpcf7-checkbox .wpcf7-list-item label,
+    .wpcf7.icf7s-686 label .wpcf7-radio .wpcf7-list-item label {
+        width: 100%;
+    }
+    .wpcf7.icf7s-686 label .wpcf7-checkbox .wpcf7-list-item .wpcf7-list-item-label,
+    .wpcf7.icf7s-686 label .wpcf7-radio .wpcf7-list-item .wpcf7-list-item-label,
+    .wpcf7.icf7s-686 label .wpcf7-checkbox .wpcf7-list-item label,
+    .wpcf7.icf7s-686 label .wpcf7-radio .wpcf7-list-item label {
+        vertical-align: middle;
+        display: table-cell;
+        float:  none;
+    }
+
+    .wpcf7.icf7s-686 label .wpcf7-checkbox .wpcf7-list-item input,
+    .wpcf7.icf7s-686 label .wpcf7-radio .wpcf7-list-item input {
+        position: absolute;
+        left: -25px;
+        top: 10px;
+        margin: 0;
+    }
+    .wpcf7.icf7s-686 label .wpcf7-select[multiple] {
+        min-height: 55px;
+    }
+    .wpcf7.icf7s-686 label .wpcf7-date {
+        display: block;
+        padding: 0.5rem 1rem;
+    }
+    .wpcf7.icf7s-686 label .wpcf7-number {
+        max-width: 100px;
+        text-align: center;
+    }
+    .wpcf7.icf7s-686 label .wpcf7-textarea {
+        max-height: 250px;
+        resize: vertical;
+        height: inherit;
+    }
+
+    /* button */
+    .wpcf7.icf7s-686 .icf7s-button {
+        width: 100%;
+        display: inline-block;
+    }
+    .wpcf7.icf7s-686 .icf7s-button .wpcf7-submit {
+        border: 1px solid #fff;
+        border-width: 1px;
+        border-radius: 3px;
+        border-style: solid;
+        border-color: #ac8542;
+        background-color: #ac8542;
+        font-size:16px;
+        color: #f9f9f9;
+        width: 100%;
+                max-width: 20%;
+        min-width: 95px;
+        padding: 5px 0px;
+        height: 100px;
+        cursor: pointer;
+        height: 40px;
+        font-weight: 500;
+        -webkit-transition: opacity .3s ease-in-out;
+        -moz-transition: opacity .3s ease-in-out;
+        -ms-transition: opacity .3s ease-in-out;
+        -o-transition: opacity .3s ease-in-out;
+        transition: opacity .3s ease-in-out;
+    }
+    .wpcf7.icf7s-686 .icf7s-button .wpcf7-submit:hover {
+        opacity: 0.8;
+    }
+
+    /* validation */
+    .wpcf7.icf7s-686 .wpcf7-not-valid-tip {
+        margin-top: 15px;
+        font-size: 16px;
+        color: #6d6d6d;
+        display: block;
+    }
+    .wpcf7.icf7s-686 .wpcf7-response-output {
+        font-family: sans-serif;
+        border-color: #6d6d6d;
+        color: #6d6d6d;
+    }
+
+
+    /* range style */
+
+    .wpcf7.icf7s-686 label input[type="range"] {
+        width: 100%;
+        margin: 0px;
+        padding: 8px 0px;
+        outline: none;
+        background-color: transparent;
+        -webkit-appearance: none;
+        margin-top: 10px;
+    }
+
+    .wpcf7.icf7s-686 label input[type="range"]:focus {
+        outline: none;
+    }
+
+    .wpcf7.icf7s-686 label input[type="range"]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 4px;
+        background: #CCC;
+        border-radius: 7px;
+        cursor: pointer;
+    }
+
+    .wpcf7.icf7s-686 label input[type="range"]:focus::-webkit-slider-runnable-track {
+        background:#6d6d6d;
+    }
+
+    .wpcf7.icf7s-686 label input[type="range"]::-webkit-slider-thumb {
+        height: 18px;
+        width: 18px;
+        margin-top: -7px;
+        border:1px solid #6d6d6d;
+        background:#6d6d6d;
+        border-radius: 50%;
+        cursor: pointer;
+        -webkit-appearance: none;
+    }
+
+    .wpcf7.icf7s-686 label input[type="range"]::-moz-range-thumb {
+        height: 18px;
+        width: 18px;
+        border:1px solid #6d6d6d;
+        background: #6d6d6d;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .wpcf7.icf7s-686 label input[type="range"]::-moz-range-track {
+        width: 100%;
+        height: 4px;
+        background: #CCC;
+        border-radius: 7px;
+        cursor: pointer;
+    }
+
+    .wpcf7.icf7s-686 label input[type="range"]:focus::-moz-range-track {
+        background:#00AD7A;
+    }
+
+    .wpcf7.icf7s-686 label input[type="range"]::-ms-thumb {
+        height: 18px;
+        width: 18px;
+        border:1px solid #6d6d6d;
+        background: #6d6d6d;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .wpcf7.icf7s-686 label input[type="range"]::-ms-track {
+        width: 100%;
+        height: 4px;
+        color: transparent;
+        border-width: 16px 0;
+        border-color: transparent;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .wpcf7.icf7s-686 label input[type="range"]::-ms-fill-lower {
+        background: #CCC;
+        border-radius: 3px;
+    }
+
+    .wpcf7.icf7s-686 label input[type="range"]::-ms-fill-upper {
+        background: #CCC;
+        border-radius: 3px;
+    }
+
+    .wpcf7.icf7s-686 label input[type="range"]:focus::-ms-fill-lower {
+        background: #6d6d6d;
+    }
+
+    .wpcf7.icf7s-686 label input[type="range"]:focus::-ms-fill-upper {
+        background:#6d6d6d;
+    }
+
+                    .wpcf7.icf7s-686 {
+                    width: -webkit-fill-available;
+                }
+                .wpcf7.icf7s-686 label {
+                    width: 48%;
+                    margin-right: 2%;
+                    float: left;
+                }
+                .wpcf7.icf7s-686 label.text-area-full {
+                    width: 98%;
+                }
+
+                @media only screen and (max-width: 767px) {
+                    .wpcf7.icf7s-686 label {
+                        width: 100%;
+                        margin-right: 0%;
+                        float: none;
+                    }
+                    .wpcf7.icf7s-686 p {
+                        margin: 0;
+                    }
+                }
+            
